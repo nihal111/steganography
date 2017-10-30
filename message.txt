@@ -1,3 +1,2 @@
-This is the secret message.
-lol
+Encoding and decoding using a passphrase.
 Percent is the delimiter.%

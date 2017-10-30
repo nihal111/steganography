@@ -3,9 +3,8 @@ delimiter = '%';
 clc
 im1 = imread('stego.png');
 
-% figure(1), imshow(im1); title('Original Image'); 
-im1_double = double(im1);
-[l,w,b] = size(im1_double);
+% figure(1), imshow(im1); title('Original Image');
+[l,w,b] = size(im1);
 
 cover_size = l*w*b;
 
@@ -29,7 +28,7 @@ while (true)
         break;
     end
     
-    temp_pixel = dec2bin(im1_double(i, j, k), 8);
+    temp_pixel = dec2bin(im1(i, j, k), 8);
     LSB = temp_pixel(8);
     char_stream = strcat(char_stream, num2str(LSB));
     
