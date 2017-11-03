@@ -36,7 +36,8 @@ while(true)
 
     if (bool_im(i,j,k) == 0)
         temp_pixel = dec2bin(im1(i, j, k), 8);
-        LSB = temp_pixel(8);
+        LSB = int2str(xor(str2double(temp_pixel(7)), str2double(temp_pixel(8))));
+
         char_stream = strcat(char_stream, num2str(LSB));
 
         if length(char_stream) == 8

@@ -1,2 +1,3 @@
 Encoding and decoding using a passphrase.
-Percent is the delimiter.%
+This is our mini-project. Srivatsan
+Percent is the delimiter.
