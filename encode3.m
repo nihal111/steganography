@@ -55,7 +55,7 @@ for a = 1 : length(message_binary)
             end
             
             temp_pixel = dec2bin(im2(i, j, k), 8);
-            temp_pixel(8) = int2str(xor(str2double(temp_pixel(7)), str2double(temp_pixel(8))));
+            temp_pixel(8) = int2str(xor(key(mod(x, length(key)) + 1), str2double(temp_pixel(8))));
             im2(i, j ,k) = bin2dec(temp_pixel);
             
             bool_im(i,j,k) = 1;

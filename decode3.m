@@ -3,6 +3,8 @@ delimiter = '%';
 clc
 im1 = imread('stego.png');
 
+key = fileread('key.txt');
+
 % figure(1), imshow(im1); title('Original Image');
 [l,w,b] = size(im1);
 
@@ -36,7 +38,7 @@ while(true)
 
     if (bool_im(i,j,k) == 0)
         temp_pixel = dec2bin(im1(i, j, k), 8);
-        LSB = int2str(xor(str2double(temp_pixel(7)), str2double(temp_pixel(8))));
+        LSB = int2str(xor(key(mod(x, length(key)) + 1), str2double(temp_pixel(8))));
 
         char_stream = strcat(char_stream, num2str(LSB));
 
